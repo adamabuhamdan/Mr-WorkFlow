@@ -22,4 +22,5 @@ touch Dockerfile
 touch .env.example
 touch .env
 
+
 echo "Directory and files created successfully!"
