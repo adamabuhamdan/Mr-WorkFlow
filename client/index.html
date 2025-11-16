@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mr WorkFlow AI - Professional Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+<base target="_blank">
+</head>
+<body>
+  <!-- Luxury Navigation -->
+  <nav class="nav-luxury">
+    <div class="nav-container">
+      <div class="logo">Mr WorkFlow AI</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#consultation">Consultation</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Mr WorkFlow AI</h1>
+      <p>Your intelligent companion on the journey from idea to success</p>
+      <a href="#services" class="cta-button">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="services">
+    <div class="container">
+      <h2 class="section-title fade-in">Premium Advisory Services</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>Smart Text Advisory</h3>
+          <p>Get instant answers powered by a comprehensive knowledge base covering all startup stages with enterprise-grade intelligence and strategic insights.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Advanced Visual Analysis</h3>
+          <p>Upload pitch decks or designs and receive professional evaluation with market-ready recommendations and investor-focused insights.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-file-contract"></i>
+          </div>
+          <h3>Document Intelligence</h3>
+          <p>Upload PDFs and reports to get comprehensive investor-ready analysis with strategic recommendations and risk assessments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Tabs Section -->
+  <section class="interactive-section" id="consultation">
+    <div class="container">
+      <h2 class="section-title fade-in">Professional Consultation</h2>
+      <div class="tabs-container fade-in">
+        <div class="tabs">
+          <div class="tab active" onclick="switchTab(0)">
+            <i class="fas fa-comments"></i> Text Chat
+          </div>
+          <div class="tab" onclick="switchTab(1)">
+            <i class="fas fa-eye"></i> Image Analysis
+          </div>
+          <div class="tab" onclick="switchTab(2)">
+            <i class="fas fa-file-alt"></i> File Analysis
+          </div>
+        </div>
+
+        <div class="tab-content active" id="tab0">
+          <div class="form-group">
+            <label>Your Question or Inquiry</label>
+            <textarea id="textQuestion" placeholder="Describe your business challenge or question..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label>Language</label>
+            <select id="textLanguage">
+              <option value="en">English</option>
+              <option value="ar">العربية</option>
+            </select>
+          </div>
+          
+            <button class="btn" onclick="sendTextQuestion()">Send Question</button>
+
+            <div id="textLoading" class="loading hidden">⏳ Analyzing your request...</div>
+
+            <div id="textResponse" class="response-box"></div>
+            <div id="textStages" class="response-box" style="margin-top:10px; display:none;"></div>
+
+        </div>
+
+        <div class="tab-content" id="tab1">
+          <div class="form-group">
+            <label>Question</label>
+            <input type="text" id="imageQuestion" placeholder="What would you like to analyze about this image?" />
+          </div>
+          
+          <div class="form-group">
+            <label>Upload Image</label>
+            <input class="file-input" type="file" id="imageInput" accept="image/*" />
+          </div>
+          
+          <div class="form-group">
+            <label>Language</label>
+            <select id="imageLanguage">
+              <option value="en">English</option>
+              <option value="ar">العربية</option>
+            </select>
+          </div>
+          
+          <button class="btn" onclick="sendImageQuestion()">
+            <i class="fas fa-search"></i> Analyze Image
+          </button>
+          <div id="imageResponse" class="response-box">Professional analysis will appear here...</div>
+        </div>
+
+        <div class="tab-content" id="tab2">
+          <div class="form-group">
+            <label>Question</label>
+            <input type="text" id="fileQuestion" placeholder="What would you like to know about this document?" />
+          </div>
+          
+          <div class="form-group">
+            <label>Upload File</label>
+            <input class="file-input" type="file" id="fileInput" />
+          </div>
+          
+          <div class="form-group">
+            <label>Language</label>
+            <select id="fileLanguage">
+              <option value="en">English</option>
+              <option value="ar">العربية</option>
+            </select>
+          </div>
+          
+          <button class="btn" onclick="sendFileQuestion()">
+            <i class="fas fa-chart-bar"></i> Analyze File
+          </button>
+          <div id="fileResponse" class="response-box">Document analysis will appear here...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Startup Stages -->
+  <section class="stages-section" id="about">
+    <div class="container">
+      <h2 class="section-title fade-in">Strategic Journey</h2>
+      <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 60px;" class="fade-in">
+        A comprehensive advisory system covering every phase of your entrepreneurial journey
+      </p>
+      
+      <div class="stages-grid">
+        <div class="stage-item fade-in">
+          <span class="stage-number">01</span>
+          <h4>Ideation Stage</h4>
+          <p>Discovering ideas and identifying real problems with market validation strategies and competitive analysis.</p>
+        </div>
+        
+        <div class="stage-item fade-in">
+          <span class="stage-number">02</span>
+          <h4>Validation Stage</h4>
+          <p>MVP development, prototype testing, and user feedback integration with lean startup methodologies.</p>
+        </div>
+        
+        <div class="stage-item fade-in">
+          <span class="stage-number">03</span>
+          <h4>Product Building</h4>
+          <p>Product design excellence, user psychology optimization, and scalable architecture planning.</p>
+        </div>
+        
+        <div class="stage-item fade-in">
+          <span class="stage-number">04</span>
+          <h4>Growth & Traction</h4>
+          <p>Strategic distribution channels, market penetration, and sustainable growth momentum.</p>
+        </div>
+        
+        <div class="stage-item fade-in">
+          <span class="stage-number">05</span>
+          <h4>Funding Stage</h4>
+          <p>Angel investment strategies, venture capital readiness, and investor relations management.</p>
+        </div>
+        
+        <div class="stage-item fade-in">
+          <span class="stage-number">06</span>
+          <h4>Team & Leadership</h4>
+          <p>Company culture development, leadership excellence, and team optimization strategies.</p>
+        </div>
+        
+        <div class="stage-item fade-in">
+          <span class="stage-number">07</span>
+          <h4>Scaling Stage</h4>
+          <p>Hypergrowth management, operational efficiency, and international expansion planning.</p>
+        </div>
+        
+        <div class="stage-item fade-in">
+          <span class="stage-number">08</span>
+          <h4>Strategic Maturity</h4>
+          <p>Long-term strategy formulation, competitive advantage sustainability, and market leadership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>Mr WorkFlow AI</h3>
+        <p>Premium Enterprise Advisory Solutions</p>
+          </div>
+          
+          <div class="contact-info" style="display: flex; flex-direction: column; justify-content: center;">
+        <h4 >Contact Us</h4>
+        <div class="contact-links" style="display: flex; flex-direction: row; justify-content: center;">
+          <a href="https://www.linkedin.com/in/adam-abu-hamdan-a14993279/" class="contact-link">
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+          <a href="mailto:abuhamdanadam15@gmail.com" class="contact-link">
+            <i class="fas fa-envelope"></i>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mr WorkFlow AI. All rights reserved.</p>
+      <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">
+        Powered by Advanced AI Intelligence | Strategic Business Excellence
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script src="index.js">
+   
+  </script>
+</body>
+</html>
