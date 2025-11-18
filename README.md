@@ -126,7 +126,7 @@ User Question → Embedding → Stage Filter → Qdrant Search → Top-k Results
 
 ---
 
-## 🐳 Docker Deployment
+##  Docker Deployment
 
 ### Build
 ```bash
