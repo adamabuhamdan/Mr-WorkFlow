@@ -1,7 +1,7 @@
-# 🚀 Startup Advisor AI  
+# Mr WorkFlow AI  
 **Multi-Modal, Stage-Aware AI Mentor for Founders**
 
-Startup Advisor AI is an intelligent, multi-modal advisory system that guides founders across the entire startup lifecycle.  
+Mr WorkFlow AI   is an intelligent, multi-modal advisory system that guides founders across the entire startup lifecycle.  
 It combines **RAG (Retrieval-Augmented Generation)**, **Gemini Vision**, and **PDF intelligence** to deliver accurate, contextual, and actionable startup guidance.
 
 This project was built for the Google Hackathon and showcases production-level architecture, clean multi-model integration, and real startup knowledge.
