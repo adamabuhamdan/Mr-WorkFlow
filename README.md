@@ -1,4 +1,4 @@
-# 🚀 Mr WorkFlow AI
+#  Mr WorkFlow AI
 
 > **Multi-Modal, Stage-Aware AI Mentor for Founders**
 
